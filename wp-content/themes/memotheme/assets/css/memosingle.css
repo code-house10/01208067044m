@@ -1,0 +1,697 @@
+.content-area,
+.widget-area {
+	    overflow: hidden;
+}
+.memo-entry-meta {
+    color: #484848;
+    background: #eef1ff;
+    box-shadow: 0 1px 5px #0000004f;
+    padding: 5px 15px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 25px;
+    list-style: none;
+}
+.memo-post-content .memo-entry-meta li {
+    display: block;
+    border-left: 1px solid #c7c7c7;
+    padding-left: 10px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 35px
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 35px;
+    clear: right
+}
+
+.aligncenter {
+    clear: both;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.memo-page-hero-img {
+    position: absolute;
+    left: 13%;
+    bottom: 0;
+        opacity: 0.4;
+}
+.memo-breadcrumbs ol li {
+    display: inline-block
+}
+.memo-breadcrumbs ol {
+    margin: 0;
+    padding: 0;
+}
+.memo-breadcrumbs li a {
+    text-decoration: none
+}
+
+.memo-breadcrumbs {
+    margin-bottom: 30px;
+}
+
+.memo-breadcrumbs li a,
+.memo-breadcrumbs li span {
+    color: #000000;
+    font-weight: 600;
+}
+
+.memo-breadcrumbs li::after {
+    content: "\00bb";
+    color: #ffd24d;
+    padding: 0 .3em
+}
+
+.memo-content-thumbnail img {
+    border-radius: 15px;
+}
+n6GV8uyEgz$
+
+.memo-side-widget h3 {
+    display: inline-block;
+    font-size: 22px;
+}
+
+.memo-breadcrumbs li:last-of-type::after {
+    display: none
+}
+
+
+aside {
+    position: relative;
+}
+
+
+.posted-on {
+    display: inline-block;
+    font-size: 19px;
+}
+
+
+.wp-caption {
+    background: #f1f1f3;
+    text-align: center;
+    max-width: 96%;
+    padding: 5px 3px 10px;
+    color: #000;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.wp-caption img {
+    border: 0;
+    height: auto;
+    max-width: 98.5%;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 15px;
+    font-weight: bolder
+}
+
+.entry-content p {
+    color: #3a4750;
+    margin-bottom: 34px;
+}
+
+table {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+table>tbody>tr>td,
+table>tbody>tr>th,
+table>tfoot>tr>td,
+table>tfoot>tr>th,
+table>thead>tr>td,
+table>thead>tr>th {
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+}
+table>tbody>tr>td:first-child{
+	    background: #f9faff !important;
+}
+table>thead>tr>td,
+table>thead>tr>th {
+    border-bottom-width: 2px;
+}
+
+.wp-video,
+.wp-video video {
+    height: 100%!important;
+    max-width: 100%!important
+}
+
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+    border-radius: 16px;
+}
+
+.entry-content img,
+.entry-content ol,
+.entry-content p,
+.entry-content ul {
+    margin-bottom: 25px
+}
+
+
+
+.memo-content-thumbnail {
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+
+
+.entry-content ol,
+.entry-content ul {
+    padding-right: 15px;
+    margin-right: 20px
+}
+
+
+
+
+
+.footer-tags {
+    margin: 30px 0;
+}
+
+
+
+.memo-breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 11px 0;
+}
+
+.memo-post-share {
+    color: #000000;
+    margin: 28px 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 23px;
+    font-weight: 800;
+    border-radius: 12px;
+    align-items: center;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #dedede;
+}
+
+
+.comment-list .comment:before,
+.comment-list .comment:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+.comment-list .comment:after {
+    clear: both;
+}
+
+.entry-header {
+    margin-bottom: 80px;
+}
+
+.header-right {
+    background: #f2f4ff;
+    margin: 0 28px;
+    padding: 33px 30px;
+    border-radius: 20px;
+}
+
+
+.entry-content .post-feature-box h3 {
+    display: block;
+    border: 0;
+    padding: 0;
+}
+
+
+::marker {
+    font-size: 22px;
+    color: #405ee1;
+}
+
+.memo-comment-avatar {
+    float: right;
+    margin-left: 0.75em;
+}
+
+.memo-comment-avatar img {
+    border-radius: 50px;
+}
+
+.post-author-avatar .avatar {
+    box-shadow: 0 1px 3px 1px #868686;
+    border: 2px solid #fff;
+}
+.memo-review-excerpt {
+    padding: 15px 5px;
+}
+
+.side-left,
+.comment-list>.comment {
+    overflow: hidden;
+    padding: 15px 17px;
+}
+
+.comment-list .comment:last-child {
+    border-bottom: 0;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    height: -webkit-fill-available;
+    border-radius: 14px;
+    object-fit: fill;
+    position: absolute;
+}
+
+.header-left {
+    border-radius: 14px;
+    position: relative;
+}
+
+
+.memo-comments-box ol {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.memo-comments-box .children ol,
+.memo-comments-box .children {
+    margin-right: 20px;
+}
+
+.footer-tags a {
+    display: inline-block;
+    margin: 6px 3px;
+    background: #f2f4ff;
+    text-decoration: none;
+    padding: 3px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #405ee1;
+}
+
+
+.memo-post-share a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 37px;
+    color: #5F5F5F;
+}
+.memo-post-share .memo-facebook {
+    color: #1877f2;
+}
+
+.memo-post-share .memo-whatsapp {
+    color: #42c142;
+}
+
+.memo-post-share .memo-twitter {
+    color: #1da1f2;
+}
+.memo-post-share strong {
+    padding: 0 34px;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 16px;
+}
+.memo-comments-area {
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #dedede;
+}
+
+
+.site-main {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px 20px;
+    border: 1px solid #e5eaef;
+}
+.memo-customers-review-title-leave {
+    text-align: center;
+    background: #e9e9e9;
+    margin: 10px 0 25px;
+    padding: 10px;
+    font-size: 18px;
+    color: #1b1b1c;
+}
+.submit {
+    border-radius: 3px;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 7px 15px;
+    border: 0;
+    background: #2f475f;
+}
+.memo-post-card,
+.memo-review-block,
+.memo-post-services-box,
+.memo-post-feature-box,
+.memo-post-worksteps-box {
+    border: 1px solid #e5eaef;
+    border-radius: 15px;
+    padding: 23px 15px;
+    margin-bottom: 40px;
+}
+.memo-post-services-box {
+    text-align:center
+}
+.memo-post-feature-box,
+.memo-post-worksteps-box {
+    text-align:center
+}
+.memo-feature-box-img {
+    width: 70px;
+    height: 70px;
+    background-color: #f7f8fd;
+    line-height: 88px;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.memo-post-feature-box h3,
+.memo-worksteps-box-info h3 {
+    margin: 15px 0;
+}
+.memo-post-feature-box p,
+.memo-post-worksteps-box p{
+    color: #444858;
+}
+
+.memo-worksteps-box-number {
+    display: block;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    margin: auto;
+    background-color: #f7f8fd;
+    border-radius: 50px;
+    color: #3f59ed;
+    font-weight: 900;
+    font-size: 26px;
+}
+.memo-callusnow {
+    border: 3px solid #3f59ed;
+    border-radius: 24px;
+    padding: 35px 26px;
+      margin-bottom: 40px;
+}
+
+.memo-order-whats.memo-btn {
+    background-color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.comments-rating {
+	border: none;
+	padding: 0;
+	margin-left: 0;
+	overflow: hidden;
+}
+
+.comments-rating label {
+	display: inline-block;
+}
+
+.rating-container {
+	font-size: 0;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+}
+
+.rating-container * {
+	font-size: 1.4rem;
+}
+
+.rating-container > input {
+	display: none;
+}
+
+.rating-container > input + label {
+	display: inline-block;
+	overflow: hidden;
+	text-indent: 9999px;
+	width: 36px;
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 0;
+}
+
+.ico-star:before{
+	content: "\2605";
+	display: inline-block;
+	color: #888;
+	font-size: 35px;
+}
+.ico-star-filled:before{
+	color: #ffd700;
+}
+.rating-container > input + label:before {
+	display: inline-block;
+	text-indent: -9999px;
+	content: "\2605";
+	color: #888;
+	font-size: 35px;
+}
+
+.rating-container > input:checked ~ label:before,
+.rating-container > input + label:hover ~ label:before,
+.rating-container > input + label:hover:before {
+	content: "\2605";
+	color: #ffd700;
+	text-shadow: 0 0 1px #333;
+}
+
+.rating-container > .star-cb-clear + label {
+	text-indent: -9999px;
+	width: .5em;
+	margin-left: -.5em;
+}
+
+.rating-container > .star-cb-clear + label:before {
+	width: .5em;
+}
+
+.rating-container:hover > input + label:before {
+	content: "\2605";
+	color: #888;
+	text-shadow: none;
+}
+
+.rating-container:hover > input + label:hover ~ label:before,
+.rating-container:hover > input + label:hover:before {
+	content: "\2605";
+	color: #ffd700;
+	text-shadow: 0 0 1px #333;
+}
+
+.order-services {
+    display: none
+}
+
+.order-services.active {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 88%);
+    justify-content: center;
+    align-items: center
+}
+
+span.close-panel {
+    position: absolute;
+    left: 13px;
+    top: -3px;
+    font-size: 42px;
+    display: block;
+    color: red;
+    cursor: pointer
+}
+
+.order-icon {
+    display: inline-block;
+    background-color: #3f59ed;
+    color: #fff;
+    width: 140px;
+    font-size: 75px;
+    height: 140px;
+    line-height: 152px;
+    border-radius: 50%;
+    margin-top: -73px;
+    border: 1px solid #fff;
+    position: relative;
+    margin-bottom: 21px
+}
+
+.order-icon:before {
+    content: ' ';
+    position: absolute;
+    width: 164px;
+    height: 175px;
+    border-width: 4px;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-radius: 164px;
+    top: -19px;
+    left: -11px;
+    background: rgba(0,0,0,0) !important;
+    transform: rotate(-109deg);
+    transition: .3s;
+    border-color: #3f59ed;
+}
+
+.order-icon:after {
+    content: ' ';
+    position: absolute;
+    bottom: -10px;
+    width: 29px;
+    right: 102px;
+    height: 17px;
+    border: 4px solid #3f59ed;
+    border-radius: 20px
+}
+
+.order-content {
+    background-color: #fff;
+    padding: 35px 17px;
+    border-radius: 30px;
+    text-align: center;
+    width: 23%;
+    position: relative
+}
+
+.order-content p {
+    margin-bottom: 16px
+}
+
+.order-content h2 {
+    font-size: 42px;
+    margin-bottom: 6px
+}
+
+.order-whats {
+    background-color: #27ae60;
+    border: 1px solid #27ae60
+}
+
+.order-services .memo-btn {
+    display: inline-block;
+}
+
+.memo-faq-head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.faq-icon {display: inline-block;background-color: #000000;width: 30px;height: 30px;border-radius: 50px;margin-right: auto;text-align: center;}
+.faq-icon:after {
+        content: " ";
+        border: solid #ffffff;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 2.5px;
+        transform: rotate(134deg);
+        position: relative;
+        top: -1px;
+        left: 0px;
+}
+
+.memo-faq-head h3 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.memo-faq-number {
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 16px;
+}
+
+.memo-post-faq-box {
+    border: 1px solid #cbcfd3;
+    cursor: pointer;
+    background-color: rgb(221 157 76 / 5%);
+    border-bottom: 0;
+}
+
+.memo-faq-box-answer {
+    display: none;
+    background-color: #fff;
+    padding: 26px 20px;
+}
+.memo-post-faq-box.active .memo-faq-box-answer {
+    display: block;
+}
+
+.memo-post-faq-box.active .faq-icon:after {
+     transform: rotate(46deg);
+}
+.memo-action-btns a {
+    display: inline-block;
+    text-align: center;
+}
+
+.memo-action-btns {
+    text-align: center;
+    padding: 10px 0;
+}
+@media (min-width: 992px) {
+
+    .posted-on {
+        margin: 0 25px;
+    }
+    .memo-page-hero {
+        padding: 40px 0 0 0;
+    }
+
+    .memo-page-hero-img {
+        opacity: 1;
+}
+    .memo-post-content .memo-entry-meta li{
+        display: inline-block
+    }
+}

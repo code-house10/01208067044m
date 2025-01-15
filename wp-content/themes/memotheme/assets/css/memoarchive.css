@@ -1,0 +1,60 @@
+.memo-pagination .page-numbers {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 0 3px;
+    background: #ffffff;
+    border: 1px solid #d4d4d4;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 16px 2px;
+}
+.memo-category-content p {
+    margin-bottom: 30px;
+}
+.memo-pagination .next,
+.memo-pagination .prev {
+    float: left;
+    text-align: left;
+    padding: 0 1.5em;
+    width: auto;
+    height: auto;
+    line-height: revert
+}
+
+.memo-pagination .prev {
+    float: right;
+    text-align: right
+}
+
+.memo-pagination .current,
+.memo-pagination .page-numbers:hover {
+       color: #fff;
+       background: #4258d4;
+}
+
+.blog-page-innr .all-category {
+    margin-top: 57px;
+}
+
+.memo-category-list ul {
+    list-style: square;
+    padding: 0;
+    margin: 0;
+}
+
+.memo-category-list ul li {
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.memo-category-list ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 3px 20px;
+    font-weight: 600;
+}
+
