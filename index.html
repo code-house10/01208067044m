@@ -84,6 +84,20 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 97, 242, 0.2);
         }
+
+        .btn-secondary { /* For cancel buttons or alternative actions */
+            background: #6C757D; /* Tailwind gray color */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268; /* Darker gray */
+        }
         
         .section-dark {
             background-color: #0A0F2C;
@@ -199,6 +213,7 @@
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
             z-index: 1000;
             transition: all 0.3s ease;
+            cursor: pointer; /* Added cursor pointer */
         }
         
         .whatsapp-btn:hover { /* Changed to phone-btn */
@@ -266,6 +281,77 @@
         .faq-question i.rotate-180 {
             transform: rotate(180deg);
         }
+
+        /* Call Confirmation Modal Styles */
+        .call-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1050; /* Higher than other elements */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .call-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .call-modal {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 90%;
+            max-width: 450px;
+            text-align: right; /* For RTL */
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .call-modal-overlay.active .call-modal {
+            transform: scale(1);
+        }
+        .call-modal h3 {
+            font-size: 1.5rem; /* Tailwind text-2xl */
+            font-weight: 700; /* Tailwind font-bold */
+            color: #0A0F2C; /* secondary color */
+            margin-bottom: 1rem;
+        }
+        .call-modal p {
+            font-size: 1rem; /* Tailwind text-base */
+            color: #6C757D; /* gray color */
+            margin-bottom: 1.5rem;
+        }
+        .call-modal .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            justify-content: flex-end; /* For RTL */
+        }
+        .call-modal .checkbox-container input[type="checkbox"] {
+            margin-left: 0.5rem; /* For RTL, this will be on the right of the label */
+            width: 1.1rem;
+            height: 1.1rem;
+            accent-color: #0061F2; /* primary color */
+        }
+         .call-modal .checkbox-container label {
+            font-size: 0.9rem;
+            color: #212529; /* dark color */
+        }
+        .call-modal-actions {
+            display: flex;
+            justify-content: flex-start; /* For RTL buttons on the left */
+            gap: 0.75rem; /* space between buttons */
+        }
+        /* Ensure call buttons trigger modal */
+        .open-call-modal-btn {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -298,10 +384,10 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 
-                <a href="tel:01040490937" class="hidden md:flex items-center btn-primary">
+                <button class="hidden md:flex items-center btn-primary open-call-modal-btn">
                     <i class="fas fa-phone-alt ml-2"></i>
                     اتصل الآن لنقل عفشك
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -322,21 +408,21 @@
         </div>
         <div class="p-4">
             <nav class="flex flex-col space-y-3">
-                <a href="#home" class="py-2 text-gray hover:text-primary border-b">الرئيسية</a>
-                <a href="#about" class="py-2 text-gray hover:text-primary border-b">لماذا نحن؟</a>
-                <a href="#services" class="py-2 text-gray hover:text-primary border-b">خدمات نقل العفش</a>
-                <a href="#how-we-work" class="py-2 text-gray hover:text-primary border-b">خطوات نقل العفش</a>
-                <a href="#areas" class="py-2 text-gray hover:text-primary border-b">مناطق خدمتنا</a>
-                <a href="#gallery" class="py-2 text-gray hover:text-primary border-b">أعمالنا في نقل العفش</a>
-                <a href="#testimonials" class="py-2 text-gray hover:text-primary border-b">آراء العملاء</a>
-                <a href="#faq" class="py-2 text-gray hover:text-primary border-b">أسئلة شائعة</a>
-                <a href="#contact" class="py-2 text-gray hover:text-primary border-b">اتصل بنا</a>
+                <a href="#home" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">الرئيسية</a>
+                <a href="#about" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">لماذا نحن؟</a>
+                <a href="#services" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">خدمات نقل العفش</a>
+                <a href="#how-we-work" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">خطوات نقل العفش</a>
+                <a href="#areas" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">مناطق خدمتنا</a>
+                <a href="#gallery" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">أعمالنا في نقل العفش</a>
+                <a href="#testimonials" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">آراء العملاء</a>
+                <a href="#faq" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">أسئلة شائعة</a>
+                <a href="#contact" class="py-2 text-gray hover:text-primary border-b mobile-nav-link">اتصل بنا</a>
             </nav>
             <div class="mt-6">
-                <a href="tel:01040490937" class="btn-primary w-full text-center">
+                 <button class="btn-primary w-full text-center open-call-modal-btn">
                     <i class="fas fa-phone-alt ml-2"></i>
                     اتصل الآن لنقل عفشك
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -351,10 +437,10 @@
                 </p>
                 <div class="relative inline-block mb-10">
                     <span class="discount-badge">خصم 25%</span>
-                    <a href="tel:01040490937" class="btn-primary text-xl">
+                    <button class="btn-primary text-xl open-call-modal-btn">
                         <i class="fas fa-phone-alt ml-2"></i>
                         اتصل الآن لنقل عفش منزلك: 01040490937
-                    </a>
+                    </button>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
                     <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-filter backdrop-blur-sm">
@@ -640,10 +726,10 @@
             
             <div class="text-center mt-8">
                 <p class="text-gray mb-4">نقدم خدمات نقل العفش أيضاً في مناطق أخرى داخل وخارج القاهرة. اتصل بنا الآن للاستفسار عن إمكانية خدمتك في منطقتك.</p>
-                <a href="tel:01040490937" class="btn-primary">
+                <button class="btn-primary open-call-modal-btn">
                     <i class="fas fa-phone-alt ml-2"></i>
                     استعلم عن خدمة نقل العفش في منطقتك
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -718,10 +804,10 @@
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl font-bold mb-6">لا تفوت الفرصة! خصم 25% على جميع خدمات نقل العفش</h2>
                 <p class="text-xl mb-8">عرض خاص لفترة محدودة. اتصل بنا الآن على 01040490937 واحصل على خصم فوري 25% على تكلفة نقل عفش منزلك أو مكتبك مع شركة المازن.</p>
-                <a href="tel:01040490937" class="bg-white text-primary font-bold py-3 px-8 rounded-lg text-xl hover:bg-opacity-90 transition-all">
+                <button class="bg-white text-primary font-bold py-3 px-8 rounded-lg text-xl hover:bg-opacity-90 transition-all open-call-modal-btn">
                     <i class="fas fa-phone-alt ml-2"></i>
                     اتصل الآن واستفد من خصم نقل العفش: 01040490937
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -776,7 +862,7 @@
                                 </div>
                                 <div>
                                     <p class="text-gray text-sm">رقم هاتف نقل العفش المباشر</p>
-                                    <a href="tel:01040490937" class="font-bold text-secondary text-lg">01040490937</a>
+                                    <button class="font-bold text-secondary text-lg open-call-modal-btn">01040490937</button>
                                 </div>
                             </div>
                             <div class="flex items-center">
@@ -953,7 +1039,7 @@
                     <ul class="space-y-3">
                         <li class="flex items-center">
                             <i class="fas fa-phone-alt ml-3 text-primary"></i>
-                            <a href="tel:01040490937" class="hover:text-primary transition-colors">01040490937 (اتصال مباشر لـ نقل العفش)</a>
+                             <button class="hover:text-primary transition-colors open-call-modal-btn">01040490937 (اتصال مباشر لـ نقل العفش)</button>
                         </li>
                          <li class="flex items-center">
                             <i class="fab fa-whatsapp ml-3 text-primary"></i>
@@ -982,9 +1068,26 @@
         </div>
     </footer>
     
-    <a href="tel:01040490937" class="whatsapp-btn" title="اتصل بنا الآن لطلب خدمة نقل العفش">
+    <div class="whatsapp-btn open-call-modal-btn" title="اتصل بنا الآن لطلب خدمة نقل العفش">
         <i class="fas fa-phone-alt"></i>
-    </a>
+    </div>
+
+    <div id="callConfirmationModal" class="call-modal-overlay">
+        <div class="call-modal">
+            <h3>تأكيد الاتصال</h3>
+            <p>أنت على وشك الاتصال برقم <strong class="font-semibold text-secondary">01040490937</strong> الخاص بشركة المازن لنقل العفش. هل ترغب بالاستمرار؟</p>
+            <div class="checkbox-container">
+                <label for="seriousInquiryCheckbox">أؤكد أن استفساري جاد وأرغب بالتحدث الآن.</label>
+                <input type="checkbox" id="seriousInquiryCheckbox">
+            </div>
+            <div class="call-modal-actions">
+                <button id="confirmCallBtn" class="btn-primary opacity-50 cursor-not-allowed" disabled>
+                    <i class="fas fa-phone-alt ml-2"></i>نعم، اتصل الآن
+                </button>
+                <button id="cancelCallBtn" class="btn-secondary">إلغاء</button>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Set current year in footer
@@ -994,25 +1097,25 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const overlay = document.getElementById('overlay');
+        const siteOverlay = document.getElementById('overlay'); // Renamed to avoid conflict
         
-        if (mobileMenuBtn && mobileMenu && overlay && closeMenuBtn) {
+        if (mobileMenuBtn && mobileMenu && siteOverlay && closeMenuBtn) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.add('active');
-                overlay.classList.add('active');
+                siteOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scroll
             });
             
             const closeMobileMenu = () => {
                 mobileMenu.classList.remove('active');
-                overlay.classList.remove('active');
+                siteOverlay.classList.remove('active');
                 document.body.style.overflow = ''; // Restore background scroll
             };
 
             closeMenuBtn.addEventListener('click', closeMobileMenu);
-            overlay.addEventListener('click', closeMobileMenu);
+            siteOverlay.addEventListener('click', closeMobileMenu);
             
-            const mobileLinks = document.querySelectorAll('#mobile-menu a[href^="#"]');
+            const mobileLinks = document.querySelectorAll('#mobile-menu a.mobile-nav-link'); // Added class to target
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     closeMobileMenu();
@@ -1030,7 +1133,6 @@
             question.addEventListener('click', () => {
                 const isOpen = !answer.classList.contains('hidden');
                 
-                // Close all other answers first
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.querySelector('.faq-answer').classList.add('hidden');
@@ -1038,7 +1140,6 @@
                     }
                 });
 
-                // Toggle current answer
                 answer.classList.toggle('hidden');
                 icon.classList.toggle('rotate-180', !isOpen);
             });
@@ -1050,7 +1151,7 @@
         let currentSlide = 0;
         
         function showSlide(index) {
-            if (testimonialSlides.length === 0) return; // Guard against no slides
+            if (testimonialSlides.length === 0) return; 
             testimonialSlides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
@@ -1069,20 +1170,18 @@
             });
         }
 
-        // Auto slide testimonials
-        if (testimonialSlides.length > 1) { // Only auto-slide if more than one slide
+        if (testimonialSlides.length > 1) { 
             setInterval(() => {
                 let nextSlide = currentSlide + 1;
                 if (nextSlide >= testimonialSlides.length) {
                     nextSlide = 0;
                 }
                 showSlide(nextSlide);
-            }, 7000); // Increased interval
+            }, 7000); 
         }
         
-        // Initialize first slide
         if (testimonialSlides.length > 0) {
-            showSlide(0); // Show the first slide initially
+            showSlide(0); 
         }
 
         // Contact Form
@@ -1096,17 +1195,17 @@
                 const service = document.getElementById('service').value;
                 
                 if (!name || !phone || !service) {
-                    // Using a more user-friendly notification instead of alert
                     const notification = document.createElement('div');
                     notification.textContent = 'يرجى ملء جميع الحقول المطلوبة (الاسم، الهاتف، الخدمة).';
                     notification.style.position = 'fixed';
                     notification.style.bottom = '20px';
                     notification.style.right = '20px';
-                    notification.style.backgroundColor = '#FF3D57'; // Red for error
+                    notification.style.backgroundColor = '#FF3D57'; 
                     notification.style.color = 'white';
                     notification.style.padding = '15px';
                     notification.style.borderRadius = '8px';
                     notification.style.zIndex = '2000';
+                    notification.style.textAlign = 'right'; // For RTL
                     document.body.appendChild(notification);
                     setTimeout(() => {
                         notification.remove();
@@ -1114,17 +1213,17 @@
                     return;
                 }
                 
-                // Demo form submission - replace with actual form handling (e.g., AJAX request)
                 const successNotification = document.createElement('div');
                 successNotification.textContent = 'تم استلام طلب نقل العفش بنجاح. سنتواصل معك قريباً.';
                 successNotification.style.position = 'fixed';
                 successNotification.style.bottom = '20px';
                 successNotification.style.right = '20px';
-                successNotification.style.backgroundColor = '#25D366'; // Green for success
+                successNotification.style.backgroundColor = '#25D366'; 
                 successNotification.style.color = 'white';
                 successNotification.style.padding = '15px';
                 successNotification.style.borderRadius = '8px';
                 successNotification.style.zIndex = '2000';
+                successNotification.style.textAlign = 'right'; // For RTL
                 document.body.appendChild(successNotification);
                 setTimeout(() => {
                     successNotification.remove();
@@ -1136,17 +1235,97 @@
         
         // Smooth Scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+            // Exclude mobile menu links if they are handled separately for closing the menu
+            if (!anchor.classList.contains('mobile-nav-link')) {
+                 anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+
+        // Call Confirmation Modal Logic
+        const callModalOverlay = document.getElementById('callConfirmationModal');
+        const openCallModalButtons = document.querySelectorAll('.open-call-modal-btn');
+        const confirmCallBtn = document.getElementById('confirmCallBtn');
+        const cancelCallBtn = document.getElementById('cancelCallBtn');
+        const seriousInquiryCheckbox = document.getElementById('seriousInquiryCheckbox');
+        const phoneNumber = '01040490937';
+
+        function openCallModal() {
+            if (callModalOverlay) {
+                callModalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
+                seriousInquiryCheckbox.checked = false; // Reset checkbox
+                updateConfirmCallButtonState(); // Update button state
+            }
+        }
+
+        function closeCallModal() {
+            if (callModalOverlay) {
+                callModalOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore background scroll
+            }
+        }
+
+        function updateConfirmCallButtonState() {
+            if (seriousInquiryCheckbox.checked) {
+                confirmCallBtn.disabled = false;
+                confirmCallBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                confirmCallBtn.classList.add('hover:bg-blue-700'); // Example hover effect
+            } else {
+                confirmCallBtn.disabled = true;
+                confirmCallBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                confirmCallBtn.classList.remove('hover:bg-blue-700');
+            }
+        }
+
+        openCallModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default action if it's an <a> tag
+                openCallModal();
             });
         });
+
+        if (cancelCallBtn) {
+            cancelCallBtn.addEventListener('click', closeCallModal);
+        }
+
+        if (callModalOverlay) {
+            // Close modal if user clicks on the overlay itself
+            callModalOverlay.addEventListener('click', (event) => {
+                if (event.target === callModalOverlay) {
+                    closeCallModal();
+                }
+            });
+        }
+        
+        if (seriousInquiryCheckbox) {
+            seriousInquiryCheckbox.addEventListener('change', updateConfirmCallButtonState);
+        }
+
+        if (confirmCallBtn) {
+            confirmCallBtn.addEventListener('click', () => {
+                if (!confirmCallBtn.disabled) {
+                    window.location.href = `tel:${phoneNumber}`;
+                    closeCallModal();
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && callModalOverlay && callModalOverlay.classList.contains('active')) {
+                closeCallModal();
+            }
+        });
+
     </script>
 </body>
 </html>
